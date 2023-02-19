@@ -1,0 +1,340 @@
+:root {
+    --font-size: 14pt;
+    --purple: #73628a;
+    --dark-purple: #26202e;
+    --grey: #faf5ff;
+}
+
+body,
+html {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+    font-family: aktiv-grotesk, sans-serif;
+    font-size: 14pt;
+    font-weight: 300;
+    cursor: crosshair;
+    cursor: url('/Assets/cursor_purple-cirlce.svg') 24 24, auto;
+    background-color: var(--grey);
+}
+
+.background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translatey(-50%);
+    width: 120vw;
+    height: 120vw;
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+    opacity: 50%;
+    mix-blend-mode: multiply;
+    animation: rotate 120s linear infinite;
+}
+
+.background::after {
+    content: '';
+    background-image: url('./Assets/grain.png');
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 120vw;
+    height: 120vw;
+    opacity: 8%;
+    mix-blend-mode: soft-light;
+    animation: rotate-negative 120s linear infinite;
+}
+
+@keyframes gradient-skew {
+    0% {
+        transform: skew(0deg, 0deg);
+    }
+
+    25% {
+        transform: skew(-10deg, 20deg);
+    }
+
+    50% {
+        transform: skew(0deg, 0deg);
+    }
+
+    75% {
+        transform: skew(20deg, -10deg);
+    }
+
+    100% {
+        transform: skew(0deg, 0deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-negative {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+main {
+    color: var(--dark-purple);
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+
+.column-1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: calc(1.5 * var(--font-size));
+    flex-grow: 1;
+
+}
+
+.wrapper {
+    position: absolute;
+    top: 35%;
+    width: 100%;
+}
+
+h1 {
+    font-size: var(--font-size);
+    margin-bottom: calc(0.5 * var(--font-size));
+}
+
+.rule {
+    height: 2.5px;
+    width: 100%;
+    background-color: var(--purple);
+    margin-bottom: calc(0.5 * var(--font-size));
+
+}
+
+.column-2 {
+    display: flex;
+    align-items: center;
+}
+
+.time-scroll-x {
+    display: none;
+}
+
+.time-1,
+.time-2 {
+    -webkit-text-fill-color: rgb(0, 0, 0, 0);
+    -webkit-text-stroke-color: var(--dark-purple);
+    -webkit-text-stroke-width: 2.5pt;
+}
+
+.time-scroll-y {
+    position: relative;
+    font-family: aktiv-grotesk-condensed, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 200pt;
+    letter-spacing: -4pt;
+    line-height: 0.9em;
+    text-align: center;
+    -webkit-text-stroke-color: var(--dark-purple);
+    -webkit-text-stroke-width: 2.5pt;
+    -webkit-text-fill-color: var(--dark-purple);
+    animation: blink 2s ease-in-out infinite;
+    animation-direction: alternate;
+
+}
+
+/* .time-scroll:hover{
+    animation: scroll 1s linear infinite;
+} */
+
+@keyframes scroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0, -50%, 0);
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 100%;
+    }
+
+    75% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+}
+
+
+.column-3 {
+    padding: calc(1.5 * var(--font-size));
+    flex-grow: 1;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.button {
+    position: absolute;
+    top: 35%;
+    width: 160px;
+    cursor: url('./Assets/cursor_purple-cirlce-filled.svg') 24 24, pointer;
+}
+
+.button-title {
+    margin-bottom: calc(0.5 * var(--font-size));
+}
+
+.button-subtitle {
+    opacity: 0%;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.button:hover {
+    width: 100%;
+    transition: all 500ms ease-in-out;
+}
+
+.button:hover .button-subtitle {
+    opacity: 100%;
+    transition: all 500ms ease-in-out;
+}
+
+.button:not(:hover) {
+    transition: all 500ms ease-in-out;
+    transform-origin: left top;
+}
+
+.button:not(:hover) .button-subtitle {
+    transition: all 500ms ease-in-out;
+    transform-origin: left top;
+}
+
+@media screen and (max-width:700px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .background {
+        height: 120vh;
+        width: 120vh;
+    }
+
+    .background::after {
+        height: 120vh;
+        width: 120vh;
+
+    }
+
+    .column-1 {
+        /* background-color: aqua; */
+        width: 100%;
+        padding: calc(1.5 * var(--font-size));
+        flex-grow: none;
+
+    }
+
+    .column-2{
+        width: 100%;
+    }
+
+    .time-scroll-y {
+        display: none;
+    }
+
+    .time-scroll-x {
+        position: relative;
+        height: 200pt;
+        width: 100vw;
+        display: flex;
+        justify-content: flex-start;
+        font-family: aktiv-grotesk-condensed, sans-serif;
+        font-weight: 900;
+        letter-spacing: -3pt;
+        font-style: normal;
+        font-size: 200pt;
+        line-height: 0.9em;
+    }
+
+
+    .scroll-element-1 {
+        position: absolute;
+        white-space: nowrap;
+        animation: horizontal-scroll-1 4s linear infinite;
+    }
+
+    .scroll-element-2 {
+        position: absolute;
+        white-space: nowrap;
+        animation: horizontal-scroll-2 4s linear infinite;
+    }
+
+    @keyframes horizontal-scroll-1 {
+        0% {
+            transform: translate3d(100%, 0, 0);
+        }
+
+        50% {
+            transform: translate3d(-100%, 0, 0);
+        }
+
+        100% {
+            transform: translate3d(-100%, 0, 0);
+        }
+    }
+    @keyframes horizontal-scroll-2 {
+        0% {
+            transform: translate3d(100%, 0, 0);
+        }
+
+        50% {
+            transform: translate3d(100%, 0, 0);
+        }
+
+        100% {
+            transform: translate3d(-100%, 0, 0);
+        }
+    }
+
+    .column-3 {
+        width: 100%;
+        flex-grow: 1;
+
+    }
+
+    .button {
+        position: absolute;
+        bottom: 0;
+    }
+
+}

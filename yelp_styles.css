@@ -1,0 +1,182 @@
+:root {
+    --font-size: 14pt;
+    --purple: #73628a;
+    --dark-purple: #26202e;
+    --grey: #faf5ff;
+}
+
+body,html {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: aktiv-grotesk, sans-serif;
+    font-size: var(--font-size);
+    font-weight: 300;
+    color: var(--grey);
+    cursor: crosshair;
+    cursor: url('/Assets/cursor_purple-cirlce.svg') 24 24, auto;
+    background-color: var(--purple);
+}
+
+.background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translatey(-50%);
+    width: 120vw;
+    height: 120vw;
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+    animation: rotate 120s linear infinite;
+}
+.background::after{
+    content: '';
+    background-image: url('./Assets/grain.png');
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 120vw;
+    height: 120vw;
+    opacity: 8%;
+    mix-blend-mode: soft-light;
+    animation: rotate-negative 120s linear infinite;
+}
+
+@keyframes gradient-skew {
+    0%{transform: skew(0deg,0deg);}
+    25%{transform: skew(-10deg,20deg);}
+    50%{transform: skew(0deg,0deg);}
+    75%{transform: skew(20deg,-10deg);}
+    100%{transform: skew(0deg,0deg);}
+}
+@keyframes rotate {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+@keyframes rotate-negative {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(-360deg);}
+}
+
+main{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.fade{
+    opacity: 0%;
+    transition: opacity 1s linear;
+    transition-delay: 1s;
+}
+.fade.show{
+    opacity: 100%;
+}
+.row-1{
+    /* background-color: aqua; */
+    padding: calc(1.5 * var(--font-size));
+    transition: opacity 1s linear;
+    transition-delay: 250ms;
+    flex-grow: 1;
+}
+
+.container {
+    position: relative;
+    text-align: right;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+h1 {
+    font-family: aktiv-grotesk-condensed, sans-serif;
+    font-size: calc(1.5 * var(--font-size));
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: calc(0.5 * var(--font-size));
+}
+.rule {
+    height: 2px;
+    width: 100%;
+    background-color: var(--grey);
+    margin-bottom: calc(0.5 * var(--font-size));
+
+}
+
+
+.row-2{
+    /* background-color: gold; */
+    padding: calc(1.5 * var(--font-size));
+    width: 33%;
+    transition: opacity 1s linear;
+    transition-delay: 250ms;
+}
+.border{
+    width: 100%;
+    height: 100%;
+    padding: calc(1.5 * var(--font-size));
+    border: solid 3px var(--dark-purple);
+}
+.frame{
+    width: 100%;
+    height: 100%;
+}
+
+.button{
+    position: absolute;
+    width: 100%;
+    bottom: 50%;
+    left: 0;
+    cursor: url('./Assets/cursor_purple-cirlce-filled.svg') 24 24, pointer;  
+}
+.button .rule{
+    transition: all 500ms ease-in-out;
+    transform-origin: right;
+    transform: scaleX(0);
+}
+.button:hover .rule{
+    transform-origin: right;
+    transform: scaleX(1);
+
+}
+.button-title{
+    white-space: nowrap;
+    margin-bottom: calc(0.5 * var(--font-size));
+}
+
+@media screen and (max-width:700px){
+    main {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .background {
+        height: 120vh;
+        width: 120vh;
+    }
+
+    .background::after {
+        height: 120vh;
+        width: 120vh;
+
+    }
+    .row-1{
+        width: 100%;
+        flex-grow: 1;
+    }
+    .row-2{
+        width: 100%;
+        flex-grow: 1;
+    }
+    .button{
+        position: absolute;
+        bottom: 0;
+    }
+}

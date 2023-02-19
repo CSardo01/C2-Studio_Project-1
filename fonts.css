@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Acid-Grotesk';
+    src: url('./Assets/fonts/FFF-AcidGrotesk-Black-TRIAL.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Acid-Grotesk';
+    src: url('./Assets/fonts/FFF-AcidGrotesk-UltraLight-TRIAL.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Acid-Grotesk';
+    src: url('./Assets/fonts/FFF-AcidGrotesk-UltraLight-Italic-TRIAL.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
