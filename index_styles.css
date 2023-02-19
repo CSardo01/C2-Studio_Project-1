@@ -7,14 +7,14 @@
 
 body,
 html {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     overflow-y: hidden;
     font-family: aktiv-grotesk, sans-serif;
     font-size: 14pt;
     font-weight: 300;
     cursor: crosshair;
-    cursor: url('./Assets/cursor_purple-cirlce.svg') 24 24, auto;
+    cursor: url('./Assets/Cursors/cursor_purple.svg') 24 24, auto;
     background-color: var(--dark-purple);
 }
 
@@ -32,8 +32,8 @@ html {
 .background img {
     width: 100%;
     height: 100%;
-    animation: gradient-skew 10s ease-in-out infinite;
-    /* animation: rotate 60s linear infinite; */
+    /* animation: gradient-skew 10s ease-in-out infinite; */
+    animation: rotate 60s linear infinite;
 }
 .background::after{
     content: '';
@@ -101,7 +101,7 @@ h1 {
 .time-2 {
     -webkit-text-fill-color: rgb(0, 0, 0, 0);
     -webkit-text-stroke-color: var(--grey);
-    -webkit-text-stroke-width: 2.5pt;
+    -webkit-text-stroke-width: 2.5px;
 }
 
 .time-scroll-y {
@@ -113,7 +113,7 @@ h1 {
     line-height: 0.9em;
     text-align: center;
     -webkit-text-stroke-color: var(--grey);
-    -webkit-text-stroke-width: 2.5pt;
+    -webkit-text-stroke-width: 2.5px;
     -webkit-text-fill-color: var(--grey);
     animation: scroll 2s linear infinite;
 }
@@ -124,13 +124,15 @@ h1 {
 
 @keyframes scroll {
     0% {
-        transform: translate3d(0, 0, 0);
+        transform: translatey(0);
     }
 
     100% {
-        transform: translate3d(0, -50%, 0);
+        transform: translatey(-50%);
+
     }
 }
+
 
 .column-3 {
     padding: calc(1.5 * var(--font-size));
@@ -148,7 +150,7 @@ h1 {
     bottom: 21pt;
     width: 160px;
     bottom: 42px;
-    cursor: url('./Assets/cursor_purple-cirlce-filled.svg') 24 24, pointer;
+    cursor: url('./Assets/Cursors/cursor_purple_filled.svg') 24 24, pointer;
     transition: all 500ms ease-in-out;
 
 }
@@ -188,8 +190,8 @@ h1 {
     main {
         display: flex;
         flex-direction: column;
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
     }
 
     .background {

@@ -6,8 +6,8 @@
 }
 
 body,html {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
     font-family: aktiv-grotesk, sans-serif;
@@ -15,7 +15,7 @@ body,html {
     font-weight: 300;
     color: var(--grey);
     cursor: crosshair;
-    cursor: url('/Assets/cursor_purple-cirlce.svg') 24 24, auto;
+    cursor: url('./Assets/Cursors/cursor_grey.svg') 24 24, auto;
     background-color: var(--purple);
 }
 
@@ -132,7 +132,7 @@ h1 {
     width: 100%;
     bottom: 50%;
     left: 0;
-    cursor: url('./Assets/cursor_purple-cirlce-filled.svg') 24 24, pointer;  
+    cursor: url('./Assets/Cursors/cursor_grey_filled.svg') 24 24, pointer;  
 }
 .button .rule{
     transition: all 500ms ease-in-out;
@@ -153,8 +153,8 @@ h1 {
     main {
         display: flex;
         flex-direction: column;
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
     }
 
     .background {
