@@ -198,7 +198,7 @@ h1 {
 
 .column-3 {
     padding: calc(1.5 * var(--font-size));
-    width: 33%;;
+    flex-grow: 1;
 }
 
 .container {
