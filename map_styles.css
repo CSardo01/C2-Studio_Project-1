@@ -15,7 +15,7 @@ body,html {
     font-weight: 300;
     color: var(--grey);
     cursor: crosshair;
-    cursor: url('/Assets/cursor_purple-cirlce.svg') 24 24, auto;
+    cursor: url('./Assets/cursor_purple-cirlce.svg') 24 24, auto;
     background-color: var(--purple);
 }
 
