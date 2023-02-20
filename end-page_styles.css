@@ -100,7 +100,6 @@ main {
 .fade{
     opacity: 0%;
     transition: opacity 1s linear;
-    transition-delay: 1s;
 }
 .fade.show{
     opacity: 100%;
